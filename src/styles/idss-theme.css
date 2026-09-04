@@ -1,0 +1,232 @@
+/*
+ * IDSS shared design system — light theme.
+ *
+ * Copied verbatim into every module at src/styles/idss-theme.css and imported
+ * right after that module's own stylesheet. It unifies typography, the colour
+ * palette and common control primitives across all five federated modules so
+ * they read as one product inside the host shell.
+ *
+ * The legacy-variable aliases and base typography use `!important` so this file
+ * wins regardless of the order stylesheets end up in the federated bundle.
+ *
+ * Light theme only — there is intentionally no dark mode.
+ */
+
+:root {
+  /* Typography */
+  --idss-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  --idss-font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
+
+  /* Surfaces */
+  --idss-bg: #f4f6fb;
+  --idss-surface: #ffffff;
+  --idss-surface-2: #f8fafc;
+  --idss-surface-3: #f1f5f9;
+
+  /* Text */
+  --idss-text: #1e293b;
+  --idss-heading: #0f172a;
+  --idss-text-muted: #64748b;
+  --idss-text-subtle: #94a3b8;
+
+  /* Lines */
+  --idss-border: #e2e8f0;
+  --idss-border-strong: #cbd5e1;
+
+  /* Brand + status */
+  --idss-primary: #2563eb;
+  --idss-primary-hover: #1d4ed8;
+  --idss-primary-weak: #eff6ff;
+  --idss-primary-contrast: #ffffff;
+  --idss-success: #16a34a;
+  --idss-success-weak: #dcfce7;
+  --idss-warning: #d97706;
+  --idss-warning-weak: #fef3c7;
+  --idss-danger: #dc2626;
+  --idss-danger-weak: #fee2e2;
+  --idss-info: #0891b2;
+  --idss-info-weak: #cffafe;
+
+  /* Data-viz categorical ramp (shared so charts match across modules) */
+  --idss-viz-1: #2563eb;
+  --idss-viz-2: #0891b2;
+  --idss-viz-3: #16a34a;
+  --idss-viz-4: #d97706;
+  --idss-viz-5: #9333ea;
+  --idss-viz-6: #dc2626;
+
+  /* Shape */
+  --idss-radius-sm: 6px;
+  --idss-radius: 10px;
+  --idss-radius-lg: 16px;
+  --idss-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --idss-shadow-md: 0 6px 20px rgba(15, 23, 42, 0.12);
+  --idss-shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.16);
+
+  /* ---- Legacy aliases: network-analyzer / resource-optimizer / host ---- */
+  --primary-color: #0f172a !important;
+  --secondary-color: #2563eb !important;
+  --accent-color: #dc2626 !important;
+  --success-color: #16a34a !important;
+  --border-radius: 10px !important;
+  --box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08) !important;
+
+  --na-primary: #0f172a !important;
+  --na-secondary: #2563eb !important;
+  --na-accent: #dc2626 !important;
+  --na-success: #16a34a !important;
+  --na-border: #e2e8f0 !important;
+  --na-bg: #f8fafc !important;
+  --na-radius: 10px !important;
+  --na-shadow: 0 1px 3px rgba(15, 23, 42, 0.08) !important;
+
+  /* ---- Legacy aliases: resource-allocator ---- */
+  --ink: #1e293b !important;
+  --muted: #64748b !important;
+  --line: #e2e8f0 !important;
+  --paper: #ffffff !important;
+  --canvas: #f4f6fb !important;
+  --green: #2563eb !important;
+  --dark: #1d4ed8 !important;
+  --mint: #eff6ff !important;
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.08) !important;
+
+  /* ---- Legacy aliases: intelligent-decisions (client/src/index.css) ---- */
+  --bg-primary: #f4f6fb !important;
+  --bg-secondary: #f8fafc !important;
+  --bg-card: #ffffff !important;
+  --bg-card-hover: #f8fafc !important;
+  --bg-elevated: #ffffff !important;
+  --border-subtle: #e2e8f0 !important;
+  --border-focus: #2563eb !important;
+  --border-glow: rgba(37, 99, 235, 0.25) !important;
+  --accent-primary: #2563eb !important;
+  --accent-primary-hover: #1d4ed8 !important;
+  --accent-cyan: #0891b2 !important;
+  --accent-emerald: #16a34a !important;
+  --accent-amber: #d97706 !important;
+  --accent-rose: #dc2626 !important;
+  --accent-violet: #9333ea !important;
+  --text-primary: #1e293b !important;
+  --text-secondary: #64748b !important;
+  --text-muted: #94a3b8 !important;
+  --text-inverse: #ffffff !important;
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif !important;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08) !important;
+  --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.12) !important;
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.16) !important;
+  --shadow-glow: 0 6px 20px rgba(15, 23, 42, 0.12) !important;
+  --shadow-cyan-glow: 0 6px 20px rgba(15, 23, 42, 0.12) !important;
+  --radius-sm: 6px !important;
+  --radius-md: 10px !important;
+  --radius-lg: 16px !important;
+  --radius-xl: 24px !important;
+}
+
+/* ---------------------------------------------------------------------------
+ * Base element normalisation.
+ * ------------------------------------------------------------------------- */
+html,
+body {
+  background: var(--idss-bg) !important;
+  background-image: none !important;
+}
+
+body {
+  margin: 0;
+  font-family: var(--idss-font-sans) !important;
+  color: var(--idss-text) !important;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--idss-font-sans) !important;
+  color: var(--idss-heading);
+  line-height: 1.25;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--idss-font-mono) !important;
+}
+
+a {
+  color: var(--idss-primary);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--idss-font-sans) !important;
+}
+
+/* Shared control primitives for module markup that uses these generic class
+ * names. Module-specific classes are left untouched. */
+.btn,
+button.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1.05rem;
+  border-radius: var(--idss-radius-sm);
+  border: 1px solid var(--idss-border-strong);
+  background: var(--idss-surface);
+  color: var(--idss-text);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  border-color: var(--idss-primary);
+  color: var(--idss-primary);
+}
+
+.btn-primary,
+button.btn-primary {
+  background: var(--idss-primary);
+  border-color: var(--idss-primary);
+  color: var(--idss-primary-contrast);
+}
+
+.btn-primary:hover {
+  background: var(--idss-primary-hover);
+  border-color: var(--idss-primary-hover);
+  color: var(--idss-primary-contrast);
+}
+
+.btn-secondary,
+button.btn-secondary {
+  background: var(--idss-surface);
+  border-color: var(--idss-border-strong);
+  color: var(--idss-text);
+}
+
+.btn-success,
+button.btn-success {
+  background: var(--idss-success);
+  border-color: var(--idss-success);
+  color: #fff;
+}
+
+.btn:disabled,
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
